@@ -25,6 +25,11 @@ public class OrderController {
         return orderRepository.findAll();
     }
 
+    @QueryMapping
+    public List<Product> products() {
+        return productRepository.findAll();
+    }
+
     @SchemaMapping
     public List<OrderItem> items(Order order) {
         return order.orderItems();

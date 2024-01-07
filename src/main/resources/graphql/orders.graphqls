@@ -16,5 +16,4 @@ type Product {
 type Query {
     orders: [Order!]!
     products: [Product!]!
-    items: [OrderItem!]!
 }
