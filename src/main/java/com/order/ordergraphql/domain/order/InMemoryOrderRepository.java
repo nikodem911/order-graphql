@@ -13,9 +13,11 @@ class InMemoryOrderRepository implements OrderRepository {
         this.orders = List.of(
                 new Order("order1", List.of(
                         new OrderItem("1", "1"),
-                        new OrderItem("2", "3"))),
+                        new OrderItem("2", "3")),
+                        "1"),
                 new Order("order2", List.of(
-                        new OrderItem("1", "2")))
+                        new OrderItem("1", "2")),
+                        "2")
         );
     }
 

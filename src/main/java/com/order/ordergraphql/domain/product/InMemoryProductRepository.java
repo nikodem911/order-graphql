@@ -27,6 +27,6 @@ class InMemoryProductRepository implements ProductRepository {
     public Product findById(String productId) {
         return products.stream().filter(p -> p.id().equals(productId))
                 .findFirst()
-                .orElse(new Product("0", "Not Found", ""));
+                .orElse(null);
     }
 }

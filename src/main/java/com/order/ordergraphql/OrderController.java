@@ -1,5 +1,7 @@
 package com.order.ordergraphql;
 
+import com.order.ordergraphql.domain.customer.Customer;
+import com.order.ordergraphql.domain.customer.CustomerRepository;
 import com.order.ordergraphql.domain.order.Order;
 import com.order.ordergraphql.domain.order.OrderItem;
 import com.order.ordergraphql.domain.order.OrderRepository;
@@ -19,6 +21,7 @@ import java.util.List;
 public class OrderController {
     private final OrderRepository orderRepository;
     private final ProductRepository productRepository;
+    private final CustomerRepository customerRepository;
 
     @QueryMapping
     public List<Order> orders() {
@@ -30,9 +33,19 @@ public class OrderController {
         return productRepository.findAll();
     }
 
+    @QueryMapping
+    public List<Customer> customers() {
+        return customerRepository.findAll();
+    }
+
     @SchemaMapping
     public List<OrderItem> items(Order order) {
         return order.orderItems();
+    }
+
+    @SchemaMapping
+    public Customer customer(Order order) {
+        return customerRepository.findById(order.customerId());
     }
 
     @SchemaMapping

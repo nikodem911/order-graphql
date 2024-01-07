@@ -1,6 +1,7 @@
 type Order {
     id: ID!
     items: [OrderItem!]!
+    customer: Customer!
 }
 
 type OrderItem {
@@ -13,7 +14,14 @@ type Product {
     name: String!
 }
 
+type Customer {
+    id: ID!
+    firstName: String!
+    lastName: String!
+}
+
 type Query {
     orders: [Order!]!
     products: [Product!]!
+    customers: [Customer!]!
 }
