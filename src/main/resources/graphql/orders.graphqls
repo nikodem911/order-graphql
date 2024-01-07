@@ -1,7 +1,20 @@
 type Order {
     id: ID!
+    items: [OrderItem!]!
+}
+
+type OrderItem {
+    id: ID!
+    product: Product!
+}
+
+type Product {
+    id: ID!
+    name: String!
 }
 
 type Query {
-    orders: [Order]!
+    orders: [Order!]!
+    products: [Product!]!
+    items: [OrderItem!]!
 }
