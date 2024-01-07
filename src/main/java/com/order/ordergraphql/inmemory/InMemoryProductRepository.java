@@ -12,10 +12,10 @@ public class InMemoryProductRepository implements ProductRepository {
 
     public InMemoryProductRepository(List<Product> products) {
         this.products = List.of(
-                new Product("1", "Samsung Smart TV"),
-                new Product("2", "Philips Smart TV"),
-                new Product("3", "Motorola Edge 40"),
-                new Product("4", "Motorola Edge 30")
+                new Product("1", "Samsung Smart TV", "4123458778932"),
+                new Product("2", "Philips Smart TV", "4123458553112"),
+                new Product("3", "Motorola Edge 40", "4143265522111"),
+                new Product("4", "Motorola Edge 30", "4143265522122")
         );
     }
 
@@ -29,6 +29,6 @@ public class InMemoryProductRepository implements ProductRepository {
     public Product findById(String productId) {
         return products.stream().filter(p -> p.id().equals(productId))
                 .findFirst()
-                .orElse(new Product("0", "Not Found"));
+                .orElse(new Product("0", "Not Found", ""));
     }
 }
