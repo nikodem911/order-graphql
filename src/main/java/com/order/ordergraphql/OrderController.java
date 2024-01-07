@@ -1,5 +1,10 @@
 package com.order.ordergraphql;
 
+import com.order.ordergraphql.domain.order.Order;
+import com.order.ordergraphql.domain.order.OrderItem;
+import com.order.ordergraphql.domain.order.OrderRepository;
+import com.order.ordergraphql.domain.product.Product;
+import com.order.ordergraphql.domain.product.ProductRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.graphql.data.method.annotation.QueryMapping;

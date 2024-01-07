@@ -1,13 +1,11 @@
-package com.order.ordergraphql.inmemory;
+package com.order.ordergraphql.domain.product;
 
-import com.order.ordergraphql.Product;
-import com.order.ordergraphql.ProductRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public class InMemoryProductRepository implements ProductRepository {
+class InMemoryProductRepository implements ProductRepository {
     private List<Product> products;
 
     public InMemoryProductRepository(List<Product> products) {

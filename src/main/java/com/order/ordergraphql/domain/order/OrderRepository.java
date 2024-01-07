@@ -1,4 +1,4 @@
-package com.order.ordergraphql;
+package com.order.ordergraphql.domain.order;
 
 import java.util.List;
 
