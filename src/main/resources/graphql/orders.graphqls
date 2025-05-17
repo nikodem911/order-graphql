@@ -23,6 +23,7 @@ type Customer {
 }
 
 type Query {
+    searchOrdersByIdSubstring(orderIdSubstring: String!): [Order!]!
     orders: [Order!]!
     products: [Product!]!
     customers: [Customer!]!

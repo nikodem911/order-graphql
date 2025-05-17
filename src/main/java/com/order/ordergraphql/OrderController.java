@@ -9,6 +9,7 @@ import com.order.ordergraphql.domain.product.Product;
 import com.order.ordergraphql.domain.product.ProductRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
@@ -26,6 +27,11 @@ public class OrderController {
     @QueryMapping
     public List<Order> orders() {
         return orderRepository.findAll();
+    }
+
+    @QueryMapping
+    public List<Order> searchOrdersByIdSubstring(@Argument String orderIdSubstring) {
+        return orderRepository.findByIdSubstring(orderIdSubstring);
     }
 
     @QueryMapping

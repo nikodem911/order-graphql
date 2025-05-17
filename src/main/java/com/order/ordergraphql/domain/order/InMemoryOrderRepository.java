@@ -25,4 +25,11 @@ class InMemoryOrderRepository implements OrderRepository {
     public List<Order> findAll() {
         return orders;
     }
+
+    @Override
+    public List<Order> findByIdSubstring(String substring) {
+        return orders.stream()
+                .filter(order -> order.id().contains(substring))
+                .toList();
+    }
 }
